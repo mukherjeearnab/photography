@@ -1,0 +1,13 @@
+.full-slide-bg {
+    /* The image used */
+    background-image: url("https://ipfs.infura.io/ipfs/QmQjn9HyprBKUKjYp1bmUmCNLgwA4rheyAL9udtyEYgwfF");
+
+    /* Full height */
+    height: 100vh;
+    width: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
