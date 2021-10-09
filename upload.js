@@ -32,10 +32,10 @@ let imageJSON = [];
 
 const main = async () => {
     const Images = await getImagesFromDir();
-    Images.forEach(async (image) => {
-        console.log(image);
-        dims = getImageRes(image);
-        const hash = await upload2IPFS(`./images/${image}`);
+    for (let i = 0; i < Images.length; i++) {
+        console.log(Images[i]);
+        dims = getImageRes(Images[i]);
+        const hash = await upload2IPFS(`./images/${Images[i]}`);
         let payload = {
             src: `https://ipfs.infura.io/ipfs/${hash}`,
             thumbnail: `https://ipfs.infura.io/ipfs/${hash}`,
@@ -47,7 +47,9 @@ const main = async () => {
         console.log(payload);
 
         imageJSON.push(payload);
-    });
+    }
+
+    fs.writeFileSync("images.json", JSON.stringify(imageJSON));
 };
 
 main();
