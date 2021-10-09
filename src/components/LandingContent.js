@@ -7,7 +7,7 @@ const Component = (props) => {
             <p>Photography Enthusiast</p>
             <h3>
                 <h2 className="landing-instagram">
-                    <a href="https://instagram.com">
+                    <a target="blank" href="https://www.instagram.com/arnabm99/">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </h2>
