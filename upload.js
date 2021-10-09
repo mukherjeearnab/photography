@@ -1,9 +1,9 @@
 const imageSize = require("image-size");
 const fs = require("fs");
-const ipfsAPI = require("ipfs-api");
+// const ipfsAPI = require("ipfs-api");
 
 const ImageDir = "./images/";
-const ipfs = ipfsAPI("ipfs.infura.io", "5001", { protocol: "https" });
+// const ipfs = ipfsAPI("ipfs.infura.io", "5001", { protocol: "https" });
 
 const getImagesFromDir = async () => {
     return await fs.readdirSync(ImageDir);
@@ -19,34 +19,28 @@ const getImageRes = (image) => {
     return dims;
 };
 
-const upload2IPFS = async (image) => {
-    let imageFile = fs.readFileSync(image);
-    let imageBuffer = Buffer.from(imageFile);
-
-    let reply = await ipfs.files.add(imageBuffer);
-    // console.log(reply);
-    return reply[0].hash;
-};
-
 let imageJSON = [];
 
 const main = async () => {
     const Images = await getImagesFromDir();
     for (let i = 0; i < Images.length; i++) {
-        console.log(Images[i]);
-        dims = getImageRes(Images[i]);
-        const hash = await upload2IPFS(`./images/${Images[i]}`);
-        let payload = {
-            src: `https://ipfs.infura.io/ipfs/${hash}`,
-            thumbnail: `https://ipfs.infura.io/ipfs/${hash}`,
-            thumbnailWidth: dims.width,
-            thumbnailHeight: dims.height,
-            caption: "",
-        };
+        try {
+            console.log(Images[i]);
+            dims = getImageRes(Images[i]);
+            let payload = {
+                src: `https://raw.githubusercontent.com/mukherjeearnab/photography/backend/${Images[i]}`,
+                thumbnail: `https://raw.githubusercontent.com/mukherjeearnab/photography/backend/${Images[i]}`,
+                thumbnailWidth: dims.width,
+                thumbnailHeight: dims.height,
+                caption: "",
+            };
 
-        console.log(payload);
+            console.log(payload);
 
-        imageJSON.push(payload);
+            imageJSON.push(payload);
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     fs.writeFileSync("images.json", JSON.stringify(imageJSON));
