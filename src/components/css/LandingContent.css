@@ -7,10 +7,6 @@
     transform: translate(-50%, -50%);
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
-
 .landing-content h1 {
     font-family: "Playfair Display", serif;
     font-size: 3em;
