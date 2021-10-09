@@ -28,8 +28,8 @@ const main = async () => {
             console.log(Images[i]);
             dims = getImageRes(Images[i]);
             let payload = {
-                src: `https://raw.githubusercontent.com/mukherjeearnab/photography/backend/${Images[i]}`,
-                thumbnail: `https://raw.githubusercontent.com/mukherjeearnab/photography/backend/${Images[i]}`,
+                src: `https://raw.githubusercontent.com/mukherjeearnab/photography/backend/images/${Images[i]}`,
+                thumbnail: `https://raw.githubusercontent.com/mukherjeearnab/photography/backend/images/${Images[i]}`,
                 thumbnailWidth: dims.width,
                 thumbnailHeight: dims.height,
                 caption: "",
