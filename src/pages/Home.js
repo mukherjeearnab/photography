@@ -15,7 +15,7 @@ const Page = () => {
     return (
         <div>
             <section id="sec-landing" className="sec-landing">
-                <FullSlide />
+                <FullSlide frames={image} />
             </section>
             <section id="sec-gallery" className="sec-gallery">
                 <GalleryContent images={image} />
