@@ -6,11 +6,11 @@ const Component = (props) => {
             <h1>Arnab Mukherjee</h1>
             <p>Photography Enthusiast</p>
             <h3>
-                <h2 className="landing-instagram">
+                <p className="landing-instagram">
                     <a target="blank" href="https://www.instagram.com/arnabm99/">
-                        <i class="fab fa-instagram"></i>
+                        <i className="fab fa-instagram"></i>
                     </a>
-                </h2>
+                </p>
                 <p
                     onClick={() => {
                         document
@@ -18,7 +18,7 @@ const Component = (props) => {
                             .scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
                     }}
                 >
-                    <i class="fas fa-chevron-down"></i>
+                    <i className="fas fa-chevron-down"></i>
                 </p>
             </h3>
         </div>
