@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import FullSlide from "../components/FullSlide";
 import GalleryContent from "../components/GalleryContent";
-import Footer from "../components/Footer";
 
 const Page = () => {
     const [image, setImage] = useState([]);
@@ -20,9 +19,6 @@ const Page = () => {
             </section>
             <section id="sec-gallery" className="sec-gallery">
                 <GalleryContent images={image} />
-            </section>
-            <section id="sec-footer">
-                <Footer />
             </section>
         </div>
     );
