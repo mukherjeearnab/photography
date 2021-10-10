@@ -10,7 +10,12 @@ const Component = (props) => {
                     <a target="blank" href="https://www.instagram.com/arnabm99/">
                         <i className="fab fa-instagram"></i>
                     </a>
+                    &nbsp; &nbsp;
+                    <a target="blank" href="https://github.com/mukherjeearnab/">
+                        <i className="fab fa-github"></i>
+                    </a>
                 </p>
+                <br/><br/>
                 <p
                     onClick={() => {
                         document
