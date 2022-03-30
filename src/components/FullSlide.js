@@ -36,7 +36,8 @@ const Component = (props) => {
                 <span
                     style={{
                         zIndex: key,
-                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(${props.frames[index].src})`,
+                        backgroundImage: `url(${props.frames[index].src}), linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)`,
+                        backgroundColor: "#0093E9",
                         transitionDelay: `${delay}s`,
                     }}
                     id={`frame-${sequencer}-${key}`}
